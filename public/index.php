@@ -1,38 +1,18 @@
 <?php
 
-// Start session
 session_start();
 
-// Load environment variables (basic version)
-require_once __DIR__ . '/../app/config/database.php';
+require_once __DIR__ . '/../app/Router.php';
+require_once __DIR__ . '/../app/controllers/HomeController.php';
 
-// Simple router
-$request = $_SERVER['REQUEST_URI'];
+$router = new Router();
+$controller = new HomeController();
 
-if ($request === '/') {
-    echo "Home Page";
-} elseif ($request === '/shop') {
-    echo "Shop Page";
-} elseif ($request === '/cart') {
-    echo "Cart Page";
-} else {
-    http_response_code(404);
-    echo "404 Not Found";
-}
+$router->get('/', [$controller, 'index']);
+$router->get('/shop', [$controller, 'shop']);
+$router->get('/cart', [$controller, 'cart']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+$router->resolve($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
 
 
 

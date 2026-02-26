@@ -1,0 +1,137 @@
+/* =========================
+   SPLIT PREMIUM LANDING
+========================= */
+
+.landing-split {
+    height: calc(100vh - 120px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 80px;
+    background: linear-gradient(135deg, #f8f8f8, #ffffff);
+    position: relative;
+}
+
+/* LEFT SIDE */
+.split-left {
+    max-width: 400px;
+}
+
+.split-left h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.split-left p {
+    margin: 25px 0 35px 0;
+    color: #555;
+    font-size: 18px;
+}
+
+/* CENTER LOGO */
+.split-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watermark-logo {
+    width: 600px;
+    height: 600px;
+    background: url("logoV2.png") center center / contain no-repeat;
+    opacity: 0.50;
+    filter: grayscale(40%);
+    animation: floatLogo 10s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* RIGHT SIDE FEATURES */
+.split-right {
+    max-width: 350px;
+    margin-left: auto;
+}
+
+.feature {
+    margin-bottom: 40px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #666;
+}
+
+
+@media (max-width: 1000px) {
+    .landing-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .split-right {
+        margin: 60px auto 0;
+    color: #666;
+}
+
+
+
+    .watermark-logo {
+        width: 400px;
+        height: 400px;
+        margin: 40px 0;
+    }
+}
+
+/* Entrance Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.landing-content h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.landing-content p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Premium Button */
+.shop-btn {
+    padding: 16px 40px;
+    background: #020947;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+    background: #3f39e6;
+    transform: translateY(-2px);
+    color: white;
+}
