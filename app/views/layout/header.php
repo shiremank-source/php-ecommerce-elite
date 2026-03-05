@@ -28,7 +28,14 @@
         <a href="/login" class="login-btn">Login</a>
         <a href="/cart" class="cart-btn">
             🛒 Cart
-            <span class="cart-count" id="cart-count">0</span>
+           <?php
+require_once __DIR__ . '/../../services/CartService.php';
+$cartService = new CartService();
+?>
+
+<span class="cart-count">
+    <?= $cartService->count(); ?>
+</span>
         </a>
     </div>
 </header>

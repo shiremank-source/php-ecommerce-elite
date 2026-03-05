@@ -1,14 +1,21 @@
 <?php
-
 class Router
 {
     private $routes = [];
 
+    // Handle GET routes
     public function get($path, $callback)
     {
         $this->routes['GET'][$path] = $callback;
     }
 
+    // Handle POST routes
+    public function post($path, $callback)
+    {
+        $this->routes['POST'][$path] = $callback;
+    }
+
+    // Resolve route
     public function resolve($method, $uri)
     {
         $uri = parse_url($uri, PHP_URL_PATH);
